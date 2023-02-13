@@ -7,7 +7,6 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', views.home_page, name = "home"),
     path('funding/', views.about_page, name = "about"),
     path('collaborators/', views.collaborators_page, name = "collaborators"),
