@@ -60,7 +60,7 @@ def heart_login(request):
 
         user = authenticate(request, username= username, password = password)
 
-        if user is not None:
+        if user != None:
             login(request, user)
 
             return redirect('heart_form')
@@ -197,7 +197,7 @@ def stroke_login(request):
 
         user = authenticate(request, username= username, password = password)
 
-        if user is not None:
+        if user != None:
             login(request, user)
 
             return redirect('stroke_form')
