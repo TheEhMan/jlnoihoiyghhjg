@@ -1,15 +1,11 @@
 import environ
 import os
-import django_heroku
+import dj_database_url
 from pathlib import Path
 
 env = environ.Env(
     DEBUG=(bool, False),
-    DB_NAME=(str, ''),
-    DB_USER=(str, ''),
-    DB_PASSWORD=(str, ''),
-    DB_HOST=(str, ''),
-    DB_PORT=(str, ''),
+    DATABASE_URL=(str, ''),
 )
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,6 +22,7 @@ SECRET_KEY = 'django-insecure-!)(wfg0=bywvxclmuv42e=#y0l+9ou=ngr!lx()4@heyv2$s5z
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG')
+DEBUG_PROPAGATE_EXCEPTIONS = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -44,6 +41,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -75,16 +73,11 @@ WSGI_APPLICATION = 'labsite2.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': env('DB_NAME'),
-        'USER': env('DB_USER'),
-        'PASSWORD': env('DB_PASSWORD'),
-        'HOST': env('DB_HOST'),
-        'PORT': env('DB_PORT'),
-    }
+    'default': dj_database_url.config(
+        conn_max_age=600,
+        conn_health_checks=True,
+    ),
 }
 
 
@@ -124,22 +117,16 @@ USE_TZ = True
 
 STATIC_URL = 'staticfiles/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'staticfiles'),
+]
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_URL = '/mediafiles/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'staticfiles/mediafiles')
-
-"""
-if DEBUG == True:
-    STATICFILES_DIRS = [
-        os.path.join(BASE_DIR, 'staticfiles/'),
-    ]
-"""
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-
-if DEBUG == False:
-    django_heroku.settings(locals())
