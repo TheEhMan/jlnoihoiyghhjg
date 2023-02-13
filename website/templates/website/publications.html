@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Publications</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/portfolio/mamatjan1.png' %}" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <style>
+        .zoomable {
+            transition: transform 0.5s;
+          }
+          
+          .zoomable:hover {
+            transform: scale(1.15);
+          }
+          img {
+            max-width: 100%;
+            height: auto;
+         }
+    </style>
+</head>
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">Mamatjan Lab</a>
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'about' %}">Funding</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'projects' %}">Research</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'publications' %}">Publications</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'teaching' %}">Teaching</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'team-members' %}">Team</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'collaborators' %}">Collaborators</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <h1 class="masthead-heading text-uppercase mb-0">Publications</h1>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-infinity"></i></div>
+                <div class="divider-custom-line"></div><!-- Masthead Avatar Image-->
+            <!-- Masthead Heading-->
+            </div>
+            <img class="zoomable" src="{% static 'assets/img/portfolio/banner/publicationsb.png' %}" alt="..." />
+
+            <!-- Masthead Subheading-->
+        </div>
+    </header>
+    <!-- Portfolio Section-->
+    <section class="page-section bg-white text-secondary mb-0" id="about">
+        <div class="container">
+            <!-- About Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary">Publications</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-primary">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-infinity"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+        </div>
+        <h6>These are Dr. Yasin Mamatjan's most cited articles. If you click on the title of the publication, you will go to the article. If you want to see a full list and/or his research profile, visit his <a href="https://scholar.google.ca/citations?hl=en&user=-8wYvDIAAAAJ" style="color:#212529;">Google Scholar</a> or <a href="https://www.researchgate.net/profile/Yasin-Mamatjan" style="color:#212529;">Research Gate</a> page. <br/> 
+        </h6>
+        <style>
+            table {
+                border-collapse: collapse;
+                border: 1px solid black;
+                border-radius: 20px;
+            }
+
+            td {
+                border: 1px solid black;
+                padding: 10px;
+            }
+        </style>
+        <table>
+  <tr>
+    <td>
+        </br>
+        </br>
+      <img class="masthead-avatar mb-5 img-fluid rounded" src="{% static 'assets/img/portfolio/publications/1publication.webp' %}" alt="..." />
+
+      </td>
+    <td>
+       <a href="https://link.springer.com/article/10.1007/s00401-015-1438-8" style="color:black;"><b>IDH mutant diffuse and anaplastic astrocytomas have similar age at presentation and little difference in survival: a grading problem for WHO</b><a>
+      <br/>The WHO 2007 classification of tumors of the CNS distinguishes between diffuse astrocytoma WHO grade II (A IIWHO2007) and anaplastic astrocytoma WHO grade III (AA III WHO2007). Patients with A II WHO2007 are significantly younger and survive significantly longer than those with AA III WHO2007.
+  </tr>
+  <tr>
+    
+    <td>
+    </br>
+</br>
+        <img class="masthead-avatar mb-5 img-fluid rounded" src="{% static 'assets/img/portfolio/publications/2publication.png' %}" alt="..." /></td>
+    <td><a href="https://link.springer.com/article/10.1007/s00401-015-1438-8" style="color:black;"><b>Adjacent stimulation and measurement patterns considered harmful</b><a>
+        <br><p>We characterize the ability of electrical impedance tomography (EIT) to distinguish changes in internal conductivity distributions, and analyze it as a function of stimulation and measurement patterns. A distinguishability measure, z, is proposed which is related to the signal-to-noise ratio of a medium and to the probability of detection of conductivity changes in a region of interest.</p>
+    </td>
+  </tr>
+  <tr>
+    
+    <td>
+    </br>
+</br>
+<center>
+        <img class="masthead-avatar mb-5 img-fluid rounded" src="{% static 'assets/img/portfolio/publications/3publication.jpeg' %}" alt="..." style="max-width:325px;"/>
+</center>
+    </td>
+    <td><a href="https://academic.oup.com/neuro-oncology/article-abstract/21/7/901/5510481" style="color:black;"><b>DNA methylation profiling to predict recurrence risk in meningioma: development and validation of a nomogram to optimize clinical management</b><a>
+        <br><p>Variability in standard-of-care classifications precludes accurate predictions of early tumor recurrence for individual patients with meningioma, limiting the appropriate selection of patients who would benefit from adjuvant radiotherapy to delay recurrence. We aimed to develop an individualized prediction model of early recurrence risk combining clinical and molecular factors in meningioma.</p>
+    </td>
+  </tr>
+  <tr>
+    
+    <td>
+        <br>
+        <br>
+       <center> <img class="masthead-avatar mb-5 img-fluid rounded" src="{% static 'assets/img/portfolio/publications/4publication.jpg' %}" alt="..." style="max-width:300px;"/></center></td>
+    <td><a href="https://www.nature.com/articles/ng.3688" style="color:black;"><b>The genomic landscape of schwannoma</b><a>
+        <br><p>Schwannomas are common peripheral nerve sheath tumors that can cause debilitating morbidities. We performed an integrative analysis to determine genomic aberrations common to sporadic schwannomas. Exome sequence analysis with validation by targeted DNA sequencing of 125 samples uncovered, in addition to expected NF2 disruption, recurrent mutations in ARID1A, ARID1B and DDR1.</p>
+    </td>
+  </tr>
+  <tr>
+    
+    <td>
+    </br>
+</br>
+        <img class="masthead-avatar mb-5 img-fluid rounded" src="{% static 'assets/img/portfolio/publications/5publication.webp' %}" alt="..."    /></td>
+    <td><a href="https://www.nature.com/articles/s41586-021-03850-3" style="color:black;"><b>A clinically applicable integrative molecular classification of meningiomas</b><a>
+        <br><p>Meningiomas are the most common primary intracranial tumour in adults. Patients with symptoms are generally treated with surgery as there are no effective medical therapies. The World Health Organization histopathological grade of the tumour and the extent of resection at surgery (Simpson grade) are associated with the recurrence of disease; however, they do not accurately reflect the clinical behaviour of all meningiomas.</p>
+    </td>
+  </tr>
+</table>
+    </section>
+    <!-- Footer-->
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <!-- Footer Location-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Location</h4>
+                    <p class="lead mb-0">
+                        805 Tru Way, Kamloops
+                        <br />
+                        BC V2C 0C8
+                    </p>
+                </div>
+                <!-- Footer Social Icons-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Find Us Online</h4>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://scholar.google.ca/citations?hl=en&user=-8wYvDIAAAAJ"><img class="img-fluid rounded" src="{% static 'assets/img/portfolio/googlescholar.png' %}" alt="..." /></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/yasin-mamatjan-22599364/"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://www.researchgate.net/profile/Yasin-Mamatjan"><img class="img-fluid rounded" src="{% static 'assets/img/portfolio/researchgates.png' %}" alt="..." /></a>
+                </div>
+                <!-- Footer About Text-->
+                <!-- Footer About Text-->
+                <div class="col-lg-4">
+                    <h4 class="text-uppercase mb-4">About Mamatjan Lab</h4>
+                    <p class="lead mb-0">
+                        Artificial Intelligence in Cancer Genomics and Biomedical Engineering.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Copyright Section-->
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright &copy; Mamatjan Lab 2023</small></div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+</body>
+</html>

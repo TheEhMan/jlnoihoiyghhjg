@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Team Members</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/portfolio/mamatjan1.png' %}" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <style>
+        .zoomable {
+            transition: transform 0.5s;
+          }
+          
+          .zoomable:hover {
+            transform: scale(1.15);
+          }
+          img {
+            max-width: 100%;
+            height: auto;
+         }
+    </style>
+</head>
+<body id="page-top">
+
+
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">Mamatjan Lab</a>
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'about' %}">Funding</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'projects' %}">Research</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'publications' %}">Publications</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'teaching' %}">Teaching</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'team-members' %}">Team</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'collaborators' %}">Collaborators</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+                        <!-- Masthead Heading-->
+                        <h1 class="masthead-heading text-uppercase mb-0">Team profile</h1>
+
+                        <!-- Icon Divider-->
+                        <div class="divider-custom divider-light">
+                            <div class="divider-custom-line"></div>
+                            <div class="divider-custom-icon"><i class="fas fa-infinity"></i></div>
+                            <div class="divider-custom-line"></div>
+                        </div>
+            <!-- Masthead Avatar Image-->
+            <img class="zoomable" style="width:650px;" src="{% static 'assets/img/portfolio/banner/Team.png' %}" alt="..." />
+
+        </div>
+    </header>
+
+    <!--team-members-->
+    <section class="page-section bg-white text-secondary mb-0 " id="publications" style="height:800px">
+        <div class="container">
+            <!-- Publication Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary">team members</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-primary">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-infinity"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <h6>These are the members of Mamatjan Lab. Click on them to see a profile of them. The profile also has links to each members social network so you can get in touch with them.</h5>
+            </h6>
+                <!-- Team members Section Content-->
+            <div class="col-md-6 col-lg-4 mb-5" style="position:absolute;">
+                <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"></div>
+                    </div>
+                    <img class="img-fluid rounded" style="width: 250px;" src="{% static 'assets/img/portfolio/mamatjan1.png' %}" alt="..." />
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5" style="position:absolute; left:400px;">
+                <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"></div>
+                    </div>
+                    <img class="img-fluid rounded" style=" max-width: 500px; max-height: 250px" src="{% static 'assets/img/portfolio/ehsan.jpg' %}" alt="..." />
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5" style="position:absolute; left:625px;">
+                <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"></div>
+                    </div>
+                    <img class="img-fluid rounded" style=" max-width: 500px; max-height: 250px" src="{% static 'assets/img/portfolio/shams.png' %}" alt="..." />
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5" style="position:absolute; left:915px;">
+                <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal7">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"></div>
+                    </div>
+                    <img class="img-fluid rounded" style=" max-width: 500px; max-height: 250px" src="{% static 'assets/img/portfolio/almat.jfif' %}" alt="..." />
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5" style="position:absolute; top:1550px;">
+                <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal8">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"></div>
+                    </div>
+                    <img class="img-fluid rounded" style=" max-width: 250px;" src="{% static 'assets/img/portfolio/memtimin1.png' %}" alt="..." />
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5" style="position:absolute; top:1550px; left:400px;">
+                <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal9">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"></div>
+                    </div>
+                    <img class="img-fluid rounded" style=" max-width: 210px;" src="{% static 'assets/img/portfolio/murat.jpg' %}" alt="..." />
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4 mb-5" style="position:absolute; top:1550px; left:640px;">
+                <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal10">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"></div>
+                    </div>
+                    <img class="img-fluid rounded" style=" max-width: 222px;" src="{% static 'assets/img/portfolio/abubakar.jpg' %}" alt="..." />
+                </div>
+            </div>
+</section>
+    <!-- Footer-->
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <!-- Footer Location-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Location</h4>
+                    <p class="lead mb-0">
+                        805 Tru Way, Kamloops
+                        <br />
+                        BC V2C 0C8
+                    </p>
+                </div>
+                <!-- Footer Social Icons-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Find Us Online</h4>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://scholar.google.ca/citations?hl=en&user=-8wYvDIAAAAJ"><img class="img-fluid rounded" src="{% static 'assets/img/portfolio/googlescholar.png' %}" alt="..." /></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/yasin-mamatjan-22599364/"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://www.researchgate.net/profile/Yasin-Mamatjan"><img class="img-fluid rounded" src="{% static 'assets/img/portfolio/researchgates.png' %}" alt="..." /></a>
+                </div>
+                <!-- Footer About Text-->
+                <!-- Footer About Text-->
+                <div class="col-lg-4">
+                    <h4 class="text-uppercase mb-4">About Mamatjan Lab</h4>
+                    <p class="lead mb-0">
+                        Artificial Intelligence in Cancer Genomics and Biomedical Engineering.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Copyright Section-->
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright &copy; Mamatjan Lab 2023</small></div>
+    </div>
+    <!--Portofolio Modal 4-->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Dr. Yasin Mamatjan</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-infinity"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img class="img-fluid rounded resize" src="{% static 'assets/img/portfolio/mamatjan1.png' %}" alt="..." />
+                                <!-- Portfolio Modal - Text-->
+                                <ul style="padding-top:19px; text-align:left;">
+                                    In the last 6 years, he has:
+
+<li>     authored 34 journal publications, and over 82 conference posters/papers (16 as the first or co-first author), while I was the contributor for methylation analysis in 6 Nature papers.</li>
+</li>
+    <li>       developed ~20 ML models and genomics pipeline for clinical research laboratories.
+    </li>
+        <li>          trained three BSc students and obtained five grants in 2022 alone in the field of cancer classification and recommender systems for brain stroke and heart attack.
+        </li>
+            <li>      contributed to equity, diversity, and inclusion by employing underrepresented students and engaging in high school outreach activities.
+            </li>
+                <li>        supported University Health Network (UHN) in maintaining and fostering a culture of research excellence and continue to collaborate with them.
+                </li>
+                    <li>        developed predictor of meningioma recurrence used in the hospital for clinical test and published in Neuro-Oncology in 2019, which also led to a conference award and a “Moonshot Grant” from the US.
+                    </li>
+                        <li>      obtained research experiences at Philips Research Lab in Germany, Translational Genomics Laboratory (TGL) at OICR and Advanced Genomics Lab in UHN.
+                        </li>
+                            <li>       established collaborations with 20 research groups in five countries.</li>
+                                </ul>
+                                <a href="https://www.linkedin.com/in/yasin-mamatjan-22599364/" class="btn btn-primary" role="button" aria-disabled="true">LinkedIn</a>
+                                <a href="https://scholar.google.ca/citations?user=-8wYvDIAAAAJ&hl=en" class="btn btn-primary" role="button" aria-disabled="true">Google Scholar</a>
+                                <a href="https://www.researchgate.net/profile/Yasin-Mamatjan" class="btn btn-primary" role="button" aria-disabled="true">Research Gate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 5-->
+    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="1" aria-labelledby="portfolioModal5" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">
+                                    Ehsan Mamatjan
+                                </h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-infinity"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img class="img-fluid rounded resize" src="{% static 'assets/img/portfolio/ehsan.jpg' %}" alt="..." />
+                                <!-- Portfolio Modal - Text-->
+                                <ul style="padding-top:19px; text-align:left;">
+                                <li>He is Dr. Yasin Mamatjan's research assisstant (volunteer). </li>
+                                <li>He is the co-founder and a teacher at the Mengutech Training Centre. This is the website:<a href="http://mengutech.com/" style="color:black;">mengutech.com</a></li>
+                                <li>He built this lab website (including the heart monitor and the stroke recommender system) with Shams Khan and Dr. Mamatjan.</li>
+                                <li>He attended the 2022 TRU Hackathon competition at TRU and was placed second in the competition.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Portfolio Modal 6-->
+    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="1" aria-labelledby="portfolioModal6" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">
+                                    Shams Khan
+                                </h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-infinity"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img class="img-fluid rounded resize" src="{% static 'assets/img/portfolio/shams.png' %}" alt="..." />
+                                <!-- Portfolio Modal - Text-->
+                                <ul style="padding-top:19px; text-align:left;">
+                                <li>Sophomore Computer science student at Thompson rivers University, Canada, with work experience in Computers as well as the marketing field.</li>
+                                <li>  Having a diverse range of certifications including being a certified personal trainer and nutritionist.</li>
+                                <li>  Innate ability to pick up new skills and trades and incorporate them into a variety of situations.</li>
+                                </ul>
+                                <a href="https://ae.linkedin.com/in/shamscasm" class="btn btn-primary" role="button" aria-disabled="true">LinkedIn</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 7-->
+    <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="1" aria-labelledby="portfolioModal7" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">
+                                    Almat Bolatbekov
+                                </h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-infinity"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img class="img-fluid rounded resize" src="{% static 'assets/img/portfolio/almat.jfif' %}" alt="..." />
+                                <!-- Portfolio Modal - Text-->
+                                <ul style="padding-top:19px; text-align:left;">
+                                    <li>
+                                        3rd-year Software Engineering student from Thompson Rivers University.
+                                    </li>
+                                    <li>
+                                        Research Assistant at TRU
+                                    </li>
+                                    <li>
+                                        Interested in machine learning and web development. 
+                                    </li>
+                                    <li>
+                                        Received Engineers and Geoscientists BC – South central Branch Engineering Award, Thompson Rivers University - Undergraduate research apprenticeship award
+                                    </li>
+                                </ul>
+                                <a href="https://ca.linkedin.com/in/almat-bolatbekov" class="btn btn-primary" role="button" aria-disabled="true">LinkedIn</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 7-->
+    <div class="portfolio-modal modal fade" id="portfolioModal8" tabindex="1" aria-labelledby="portfolioModal8" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">
+                                    Muhammad Imin Bektur
+                                </h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-infinity"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img class="img-fluid rounded resize" src="{% static 'assets/img/portfolio/memtimin1.png' %}" alt="..." />
+                                <!-- Portfolio Modal - Text-->
+                                <p class="mb-4" style="padding-top:19px;">
+                                        He is the founder of UyghurSTEM
+                                    </p>
+                                    <a href="https://www.uyghurstem.com/" class="btn btn-primary" role="button" aria-disabled="true">Visit his Website</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Portofolio Modal 9-->
+    <div class="portfolio-modal modal fade" id="portfolioModal9" tabindex="-1" aria-labelledby="portfolioModal9" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Dr. Murat Orhun</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-infinity"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img class="img-fluid rounded resize" src="{% static 'assets/img/portfolio/murat.jpg' %}" alt="..." />
+                                <!-- Portfolio Modal - Text-->
+                                <ul style="padding-top:19px; text-align:left;">
+                                    <li>
+                                        He received his BSc in electrical engineering from Xinjiang University in Urumqi, followed by an MS in computer science from Yildiz Technical University and a Ph.D. from Istanbul Technical University. 
+                                    </li>
+                                    <li>
+                                        Since 2006, he has been a member of the computer engineering department at Istanbul Bilgi University.
+                                    </li>
+                                    <li>
+                                        In addition to his professional work, Murat is an expert in the field of Natural Language Processing, Machine Translation, Optimization, Machine Learning, and Data Science.
+                                    </li>
+                                    <li>
+                                        He is currently focusing his research on developing an NLP framework for Uyghur, Uzbek, and Turkish languages. 
+                                    </li>
+                                </ul>
+                                <a href="https://scholar.google.ca/citations?user=-8wYvDIAAAAJ&hl=en" class="btn btn-primary" role="button" aria-disabled="true">Google Scholar</a>
+                                <a href="https://www.researchgate.net/profile/Murat-Orhun" class="btn btn-primary" role="button" aria-disabled="true">Research Gate</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Portofolio Modal 10-->
+    <div class="portfolio-modal modal fade" id="portfolioModal10" tabindex="-1" aria-labelledby="portfolioModal10" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Abubakar Abdullahi</h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-infinity"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img class="img-fluid rounded resize" src="{% static 'assets/img/portfolio/abubakar.jpg' %}" alt="..." />
+                                <!-- Portfolio Modal - Text-->
+                                <ul style="padding-top:19px; text-align:left;">
+                                    <li>
+                                        He received his BSc and MSc at Thompson Rivers University 
+                                    </li>
+                                    <li>
+                                        He is a lecturer at Modibbo Adama University of Technology, Adama in Nigeria
+                                    </li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+</body>
+</html>

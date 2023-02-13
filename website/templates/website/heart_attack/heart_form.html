@@ -1,0 +1,364 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Upload</title><!--This is the name of the page-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body,
+        html {
+            margin: 0; 
+            padding: 0;
+            height: 100%;
+            background: #fff !important; 
+        }
+
+
+        /* Tooltip container */
+        .tooltip {
+          position: relative;
+          display: inline-block;
+          border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+        }
+        
+        /* Tooltip text */
+        .tooltip .tooltiptext {
+          visibility: hidden;
+          width: 120px;
+          background-color: black;
+          color: #fff;
+          text-align: center;
+          padding: 5px 0;
+          border-radius: 6px;
+         
+          /* Position the tooltip text - see examples below! */
+          position: absolute;
+          z-index: 1;
+        }
+        
+        /* Show the tooltip text when you mouse over the tooltip container */
+        .tooltip:hover .tooltiptext {
+          visibility: visible;
+        }
+        
+    </style>
+</head>
+
+<body style="background-color: #FFCCCB;">
+
+    <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #e3f2fd;"><!--This is the color of the navigation bar-->
+
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="{% url 'home' %}">Mamatjan Lab</a><!--This button will take us to the home page-->
+            <a class="navbar-brand" href="{% url 'heart_home' %}">Heart Monitor System</a><!--This button will take us to the home page-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mynavbar">
+
+                <ul class="navbar-nav me-auto">
+ 
+
+                </ul>
+
+
+            </div>
+        </div>
+
+        <!--This states the name of the user-->
+        <span style="width:200px;">
+            Hello {{request.user}}
+        </span>
+        <!--This is the logout button-->
+        <span>
+          <a href="{% url 'heart_logout'%}" class="btn btn-outline-secondary my-2 my-sm-0" role="button" style="color:black;">LOG OUT</a>
+
+       
+            </span>
+             
+
+    </nav>
+    <!--Input Data:
+             Age
+             Gender
+             Chest Pain Type(CP)
+             Blood Pressure at Rest(trtbps)
+             Cholestrol(chol)
+             Fasting Blood Sugar(fbs)
+             ECG at Rest(restecg)
+             Maximum heart rate achieved by that person(thalachh)
+             Exercise induced angina(exng)
+             Previous peak(oldpeak)
+             Slope(slp)
+             Number of Major Veins(caa)
+             Thalium Stress Test Result(thall)-->
+
+    <!--This is what it will say on the site-->
+         
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+  });
+  </script>
+
+    <div class="container-fluid mt-3">
+        <center>
+            <p>
+                <h2>Sample upload</h2>
+                <h6>Please fill in the form to upload the data, to predict your risk for heart attack. If you hover over the text, <br>then there is more information about what we are asking for.</h6>
+
+           
+            </p>
+
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+                <form action="{% url 'heart_result' %}" method="POST">
+
+                    {% csrf_token %}
+            
+                 <div class="form-row justify-content-center">
+            <div class="col-xs-3">
+            
+            <div class="form-group row">
+              <label for="PID" class="col-5 col-form-label">Patient ID</label> 
+              <div class="col-7">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="fa fa-address-card-o"></i>
+                    </div>
+                  </div> 
+                  <input id="PID" name="PID" placeholder="Enter your ID" type="text" class="form-control">
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="age" class="col-5 col-form-label">Age</label> 
+              <div class="col-7">
+                <input id="age" name="age" placeholder="Enter your age in years" type="text" required="required" class="form-control">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="gender" class="col-5 col-form-label">Gender</label> 
+              <div class="col-7">
+                <select id="gender" name="gender" required="required" class="custom-select">
+                  <option value="0">Male</option>
+                  <option value="1">Female</option>
+                </select>
+              </div>
+            </div>
+              
+            <div class="form-group row">
+              <label for="cp" class="col-5 col-form-label" data-toggle="tooltip" data-html="true" title="0 - Typical Angina 
+              <br>1 - Atypical Angina
+              <br>2 - Non-Anginal Pain
+              <br>3 - Asymptomatic">Chest Pain Type</label> 
+              <div class="col-7">
+                <select id="cp" name="cp" aria-describedby="cpHelpBlock" required="required" class="custom-select">
+                  <option value="0">Typical Angina</option>
+                  <option value="1">Atypical Angina</option>
+                  <option value="2">Non-Anginal Pain</option>
+                  <option value="3">Asymptomatic</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="trtbps" class="col-5 col-form-label" data-toggle="tooltip" title="normal < 140">Resting Blood Pressure</label> 
+              <div class="col-7">
+                <div class="input-group"> 
+                  <input id="trtbps" name="trtbps" placeholder="Enter your Resting Blood Pressure" type="text" class="form-control" required="required">
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="cholestrol" class="col-5 col-form-label" data-toggle="tooltip" data-html="true"  title="  
+              Total Cholesterol normal less than 170mg/dL
+              <br>Non-HDL cholesterol Less than 120mg/dL
+              <br>LDL cholesterol Less than 100mg/dL 
+              <br> HDL cholesterol More than 45mg/dL
+              <br>" >Cholestrol</label> 
+              <div class="col-7">
+                <input id="cholestrol" name="cholestrol" placeholder="Enter your Cholestrol Level" type="text" class="form-control" required="required">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="glucose" class="col-5 col-form-label" data-toggle="tooltip" data-html="true" title="  
+              Blood Sugar when Fasting
+               ">Fasting Blood Sugar</label> 
+              <div class="col-7">
+                <input id="fbs" name="fbs" placeholder="Enter your Fasting Blood Sugar" type="text" class="form-control" required="required">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="restecg" class="col-5 col-form-label" data-toggle="tooltip" data-html="true" title="  
+              normal=60 to 100 beats/minute
+               ">ECG at Rest</label> 
+              <div class="col-7">
+                <select id="restecg" name="restecg" required="required" class="custom-select">
+                  <option value="0">Normal</option>
+                  <option value="1">Abnormal</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="thalachh" class="col-5 col-form-label" data-toggle="tooltip" data-html="true" title="  
+              Maximum Heart Rate Achieved
+               ">Max Heart Rate Achieved</label> 
+              <div class="col-7">
+                <input id="thalachh" name="thalachh" placeholder="Enter your Max Heart Rate Achieved" type="text" class="form-control" required="required">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="exng" class="col-5 col-form-label" data-toggle="tooltip" data-html="true" title="  
+              This happens at the beginning of the exercise of people with ischemic heart disease.
+               ">Excersise Induced Angina</label> 
+              <div class="col-7">
+                <select id="exng" name="exng" required="required" class="custom-select">
+                  <option value="0">Yes</option>
+                  <option value="1">No</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="oldpeak" class="col-5 col-form-label" data-toggle="tooltip" data-html="true" title="  
+              If the depressions < 0.5mm, then its normal.
+               ">ST Depression Induced By Exercise Relative To Rest</label> 
+              <div class="col-7">
+                <input id="oldpeak" name="oldpeak" placeholder="Enter the Slope" type="text" class="form-control" required="required">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="slope" class="col-5 col-form-label" data-toggle="tooltip" data-html="true" title="  
+              the slope of the peak exercise ST segment
+               ">Slope of the Peak Exercise ST Segment</label> 
+              <div class="col-7">
+                <input id="slope" name="slope" placeholder="Enter the Depression" type="text" class="form-control" required="required">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="caa" class="col-5 col-form-label" data-toggle="tooltip" data-html="true" title="  
+              number of major vessels (0-3) colored by flourosopy
+               ">Number of Major Vessels</label> 
+              <div class="col-7">
+                <select id="caa" name="caa" required="required" class="custom-select">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="thall" class="col-5 col-form-label" data-toggle="tooltip" data-html="true" title="  
+              thal: 0 = normal; 1 = fixed defect; 2 = reversable defect
+               ">Thalium Stress Test Result</label> 
+              <div class="col-7">
+                <select id="thall" name="thall" required="required" class="custom-select">
+                  <option value="0">Normal</option>
+                  <option value="1">Fixed Defect</option>
+                  <option value="2">Reversible Defect</option>
+                </select>
+              </div>
+            </div>
+              <br>
+              <div class="form-group row">
+                <div class="offset-4 col-8">
+                    <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Generate </button>
+
+              </div>            
+
+
+
+        </div>
+
+      </div>
+
+
+            {%for message in messages%}
+            <p id="messages">{{message}}</p>
+
+            {% endfor %}
+
+           
+          
+          
+       
+        </form>
+
+
+
+        </center>
+       
+    </div>
+    <br>
+
+
+   
+
+</body>
+<footer class="text-white text-center text-lg-start" style="background-color:#2b99fc; color:white;">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!--Grid row-->
+    <div class="row">
+
+      <!--Grid column-->
+     
+      <!--Grid column-->
+      <div class="col-lg-3 col-md-6 mb-9 mb-md-0">
+        <h5 class="text-uppercase mb-0" style="color:white;">More From Us</h5>
+
+        <ul class="list-unstyled">
+          <ul class="list-unstyled">
+            <li>
+                <a href="{% url 'stroke_home'%}" class="text-white">Stroke Recommender System</a>
+                
+            </li>
+            <li>
+                <a href="{% url 'heart_home'%}" class="text-white">Heart Monitoring System</a>
+                
+            </li>
+            <li>
+                <a href="{% url 'home'%}" class="text-white">Mamatjan Lab</a>
+            </li>
+          </ul>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase mb-0" style="color:white;">Find Us</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="https://ca.linkedin.com/in/yasin-mamatjan-22599364" class="text-white">Linkedin</a>
+          </li>
+          <li>
+            <a href="https://www.researchgate.net/profile/Yasin-Mamatjan" class="text-white">Research Gate</a>
+          </li>
+          <li>
+            <a href="https://scholar.google.ca/citations?user=-8wYvDIAAAAJ&hl=en" class="text-white">Google Scholar</a>
+          </li>
+        </ul>
+      </div>
+      <!--Grid column-->
+    </div>
+    <!--Grid row-->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); color:white;">
+    ©2023 Copyright: Mamatjan Lab
+  </div>
+  <!-- Copyright -->
+</footer>
+</html>
+

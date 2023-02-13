@@ -1,0 +1,310 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stroke Upload</title><!--This is the name of the page-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background: #fff !important;
+        }
+
+
+
+        
+    </style>
+        
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-light" style="background-color: #e3f2fd;"><!--This is the color of the navigation bar-->
+
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="{% url 'home' %}">Mamatjan Lab</a><!--This button will take us to the home page-->
+            <a class="navbar-brand" href="{% url 'stroke_home' %}">Stroke Recommender System</a><!--This button will take us to the home page-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mynavbar">
+
+                <ul class="navbar-nav me-auto">
+ 
+
+                </ul>
+
+
+            </div>
+        </div>
+
+        <!--This states the name of the user-->
+        <span  >
+            Hello {{request.user}}
+        </span>
+        <!--This is the logout button-->
+        <span>
+            <a class="btn btn-outline-info my-2 my-sm-0" href="{% url 'stroke_logout'%}" role="button">LOGOUT</a>
+            </span>
+             
+
+    </nav>
+    <script>
+      $(document).ready(function(){
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+      </script>
+    <!--This is what it will say on the site-->
+    <div class="container-fluid mt-3">
+        <center>
+            <p>
+                <h2>Sample upload</h2>
+                <h6>Please fill in the form to upload the data, to predict your risk for stroke</h6>
+
+           
+            </p>
+
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+                <form action="{% url 'stroke_result'%}" method="POST">
+
+                    {% csrf_token %}
+            
+                 <div class="form-row justify-content-center">
+            <div class="col-xs-2">
+            
+            <div class="form-group row">
+              <label for="PID" class="col-5 col-form-label">Patient ID</label> 
+              <div class="col-7">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="fa fa-address-card-o"></i>
+                    </div>
+                  </div> 
+                  <input id="PID" name="PID" placeholder="Enter your ID" type="text" class="form-control">
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="age" class="col-5 col-form-label">Age</label> 
+              <div class="col-7">
+                <input id="age" name="age" placeholder="Enter your age in years" type="text" required="required" class="form-control">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="gender" class="col-5 col-form-label">Gender</label> 
+              <div class="col-7">
+                <select id="gender" name="gender" required="required" class="custom-select">
+                  <option value="0">Male</option>
+                  <option value="1">Female</option>
+                </select>
+              </div>
+            </div>
+             
+            <div class="form-group row">
+              <label for="mrs" class="col-5 col-form-label" data-toggle="tooltip" data-placement="left" data-html="true" title="
+              <br>0 -  No symptoms at all
+              <br>1 -  No significant disability despite symptoms; able to carry out all usual duties and activities
+              <br>3 - Moderate disability; requiring some help, but able to walk without assistance
+              <br>4 - Moderately severe disability; unable to walk without assistance and unable to attend to own bodily needs without assistance
+              <br>5 - Severe disability; bedridden, incontinent and requiring constant nursing care and attention
+              <br>6 Dead">Mrs</label> 
+              <div class="col-7">
+                <select id="mrs" name="mrs" aria-describedby="mrsHelpBlock" required="required" class="custom-select">
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                </select> 
+                <span id="mrsHelpBlock" class="form-text text-muted">Enter your Mrs value</span>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="systolic" class="col-5 col-form-label" data-toggle="tooltip" title="normal < 140">Systolic BP</label> 
+              <div class="col-7">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="fa fa-heart"></i>
+                    </div>
+                  </div> 
+                  <input id="systolic" name="systolic" placeholder="Enter your Systolic blood pressure" type="text" class="form-control" required="required">
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="distolic" class="col-5 col-form-label" data-toggle="tooltip" title="normal < 90">Distolic BP</label> 
+              <div class="col-7">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="fa fa-heart-o"></i>
+                    </div>
+                  </div> 
+                  <input id="distolic" name="distolic" placeholder="Enter your Distolic blood pressure " type="text" class="form-control" required="required">
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="glucose" class="col-5 col-form-label" data-toggle="tooltip" data-placement="left" data-html="true" title="
+              <br>1. fasting blood sugar level < 100 mg/dL (5.6 mmol/L) is normal.
+              <br>fasting blood sugar level from 100 to 125 mg/dL (5.6 to 6.9 mmol/L) is considered prediabetes.
+              <br>126 mg/dL or higher on two separate tests, then diabetes can be diagnosed.
+              <br>Regardless of when last eaten, blood sugar level of 200 mg/dL (11.1mmol/L) — or higher suggests diabetes.
+               ">Glucose</label> 
+              <div class="col-7">
+                <input id="glucose" name="glucose" placeholder="Enter your glucose level" type="text" class="form-control" required="required">
+              </div>
+            </div>
+             
+            <div class="form-group row">
+              <label for="smoking" class="col-5 col-form-label">Smoking</label> 
+              <div class="col-7">
+                <select id="smoking" name="smoking" class="custom-select" required="required" aria-describedby="smokingHelpBlock">
+                  <option value="1">Yes</option>
+                  <option value="0">No</option>
+                </select> 
+                <span id="smokingHelpBlock" class="form-text text-muted">Do you smoke?</span>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="bmi" class="col-5 col-form-label" data-toggle="tooltip" data-html="true" title="
+              <br> below 18.5 – underweight.
+              <br> between 18.5 and 24.9 –  healthy weight range.
+              <br> between 25 and 29.9 –overweight range.
+              <br> above 30 – obese range
+              <br> ">BMI</label> 
+              <div class="col-7">
+                <input id="bmi" name="bmi" placeholder="Enter your BMI" type="text" class="form-control" required="required">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="cholestrol" class="col-5 col-form-label" data-toggle="tooltip" data-html="true" title="
+              <br> Total Cholesterol normal less than 170mg/dL
+              <br>Non-HDL cholesterol Less than 120mg/dL
+              <br>LDL cholesterol Less than 100mg/dL
+              <br> HDL cholesterol More than 45mg/dL
+              <br> ">Cholestrol</label> 
+              <div class="col-7">
+                <input id="cholestrol" name="cholestrol" placeholder="Enter your cholestrol level" type="text" class="form-control" required="required">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="tos" class="col-5 col-form-label" data-toggle="tooltip" title=" Subcategorized as arterial, venous, or neurologic ">Tos</label> 
+              <div class="col-7">
+                <input id="tos" name="tos" placeholder="Enter your tos level" type="text" class="form-control" required="required">
+              </div>
+            </div>
+           
+ 
+              <br>
+              <div class="form-group row">
+                <div class="offset-4 col-8">
+                    <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Generate </button>
+
+                    <br></div>
+              </div>            
+
+
+
+        </div>
+
+          </div>
+
+
+            {%for message in messages%}
+            <p id="messages">{{message}}</p>
+
+            {% endfor %}
+
+           
+          
+          
+       
+        </form>
+
+
+
+        </center>
+       
+    </div>
+    <br>
+
+
+   
+
+</body>
+<footer class="text-white text-center text-lg-start" style="background-color:#2b99fc; color:white;">
+    <!-- Grid container -->
+    <div class="container p-4">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+       
+  
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-0" style="color:white;">More From Us</h5>
+  
+          <ul class="list-unstyled">
+            <ul class="list-unstyled">
+                <li>
+                    <a href="{% url 'stroke_home'%}" class="text-white">Stroke Recommender System</a>
+                    
+                </li>
+                <li>
+                    <a href="{% url 'heart_home'%}" class="text-white">Heart Monitoring System</a>
+                    
+                </li>
+                <li>
+                    <a href="{% url 'home'%}" class="text-white">Mamatjan Lab</a>
+                </li>
+              </ul>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-0" style="color:white;">Find Us</h5>
+  
+          <ul class="list-unstyled">
+            <li>
+              <a href="https://ca.linkedin.com/in/yasin-mamatjan-22599364" class="text-white">Linkedin</a>
+            </li>
+            <li>
+              <a href="https://www.researchgate.net/profile/Yasin-Mamatjan" class="text-white">Research Gate</a>
+            </li>
+            <li>
+              <a href="https://scholar.google.ca/citations?user=-8wYvDIAAAAJ&hl=en" class="text-white">Google Scholar</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </div>
+    <!-- Grid container -->
+  
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); color:white;">
+      ©2023 Copyright: Mamatjan Lab
+    </div>
+    <!-- Copyright -->
+  </footer>
+</html>
+

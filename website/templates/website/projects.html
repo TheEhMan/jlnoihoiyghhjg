@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Research</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/img/portfolio/mamatjan1.png' %}" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+    <style>
+        .zoomable {
+            transition: transform 0.5s;
+          }
+          
+          .zoomable:hover {
+            transform: scale(1.15);
+          }
+          img {
+            max-width: 100%;
+            height: auto;
+         }
+    </style>
+</head>
+<body id="page-top">
+
+
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">Mamatjan Lab</a>
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'about' %}">Funding</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'projects' %}">Research</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'publications' %}">Publications</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'teaching' %}">Teaching</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'team-members' %}">Team</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'collaborators' %}">Collaborators</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+                        <!-- Masthead Heading-->
+                        <h1 class="masthead-heading text-uppercase mb-0">Research strategies</h1>
+
+                        <!-- Icon Divider-->
+                        <div class="divider-custom divider-light">
+                            <div class="divider-custom-line"></div>
+                            <div class="divider-custom-icon"><i class="fas fa-infinity"></i></div>
+                            <div class="divider-custom-line"></div>
+                        </div>
+            <!-- Masthead Avatar Image-->
+            <img class="zoomable" style="width:800px;" src="{% static 'assets/img/portfolio/banner/research.png' %}" alt="..." />
+            <!-- Masthead Heading-->
+
+        </div>
+    </header>
+    <section class="page-section portfolio bg-white text-secondary" id="projects">
+        <div class="container">
+            <!-- Portfolio Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase  mb-0">Research</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-infinity"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <h6>
+                These are the projects that Dr. Yasin Mamatjan worked on. Click on them to read a little description about them. There is also a green button that takes you to the site of the project. The first and the last projects are built by Mamatjan Lab, the former being the stroke recommender system and latter being the heart attack monitor.
+            </h6>
+            <br>
+            <!-- Portfolio Grid Items-->
+            <div class="row justify-content-center">
+                <!---->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="{% static 'assets/img/portfolio/stroke.png' %}" alt="..." />
+                    </div>
+                </div>
+                <!-- Portfolio Item 2-->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="{% static 'assets/img/portfolio/ai.png' %}" alt="..." />
+                    </div>
+                </div>
+                <!-- Portfolio Item 3-->
+                <div class="col-md-6 col-lg-4 mb-5">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                        </div>
+                        <img class="img-fluid" src="{% static 'assets/img/portfolio/heart.jpg' %}" alt="..." />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <!-- Footer Location-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Location</h4>
+                    <p class="lead mb-0">
+                        805 Tru Way, Kamloops
+                        <br />
+                        BC V2C 0C8
+                    </p>
+                </div>
+                <!-- Footer Social Icons-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="text-uppercase mb-4">Find Us Online</h4>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://scholar.google.ca/citations?hl=en&user=-8wYvDIAAAAJ"><img class="img-fluid rounded" src="{% static 'assets/img/portfolio/googlescholar.png' %}" alt="..." /></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/yasin-mamatjan-22599364/"><i class="fab fa-fw fa-linkedin-in"></i></a>
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://www.researchgate.net/profile/Yasin-Mamatjan"><img class="img-fluid rounded" src="{% static 'assets/img/portfolio/researchgates.png' %}" alt="..." /></a>
+                </div>
+                <!-- Footer About Text-->
+                <!-- Footer About Text-->
+                <div class="col-lg-4">
+                    <h4 class="text-uppercase mb-4">About Mamatjan Lab</h4>
+                    <p class="lead mb-0">
+                        Artificial Intelligence in Cancer Genomics and Biomedical Engineering.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Copyright Section-->
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright &copy; Mamatjan Lab 2023</small></div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+
+
+    <!-- Portfolio Modal 7-->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="1" aria-labelledby="portfolioModal1" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">
+                                    Stroke Monitoring System
+                                </h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-infinity"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img class="img-fluid rounded resize" src="{% static 'assets/img/portfolio/stroke.png' %}" alt="..." />
+                                <!-- Portfolio Modal - Text-->
+                                <br>
+
+                                <p class="mb-4">The stroke recommender system is meant for doctors and patients to view the patient's risk of having a stroke. On the website, there is a chart and a graph that shows the patient the main factors that could cause a stroke and how much each poses as a risk towards the patient. The patient can then download the results as a pdf.
+
+                                </p>
+                                <a href="{% url 'stroke_home' %}" class="btn btn-primary" role="button" aria-disabled="true">Visit Site</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Modal 7-->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="1" aria-labelledby="portfolioModal2" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">
+                                    Cancer Classifier (Molecular Pathology)
+                                </h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-infinity"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img class="img-fluid rounded resize"  style="width: 400px;" src="{% static 'assets/img/portfolio/ai.png' %}" alt="..." />
+                                <!-- Portfolio Modal - Text-->
+                                <br>
+                                <p class="mb-4">The cancer classifier is a system that is a helping tool for pathologists and clinicians to classify the patient’s cancer. This tool is based on XAI, the new most effective and accurate AI system, and can use available data to give clinicians and pathologists precise answers.</p>
+                                <a href="https://meningiomas.shinyapps.io/meningioma_recurrence_score_online_calculator" class="btn btn-primary" role="button" aria-disabled="true">Visit Site</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Portfolio Modal 7-->
+    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="1" aria-labelledby="portfolioModal3" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">
+                                    Heart Monitoring System
+                                </h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-infinity"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img class="img-fluid rounded resize" src="{% static 'assets/img/portfolio/heart.jpg' %}" alt="..." />
+                                <!-- Portfolio Modal - Text-->
+                                <br>
+                                <p class="mb-4">
+                                    The smart medical heart monitoring system shows both doctors and patients the patient's risk of having a heart attack just by downloading an installation by wearing a smartwatch. The recommended smartwatches are the Apple Watch or the Samsung Smart Watch. There is also a website in which the doctor and the patient can view a chart and a graph displaying the main factors that could cause a heart attack and which ones to be more careful about. The patient can also download the results from the website as a pdf.
+
+                                </p>
+                                <a href="{% url 'heart_home' %}" class="btn btn-primary" role="button" aria-disabled="true">Visit Site</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<!--
+    -Cancer classifier
+    -Smart Medical System
+    -
+-->
+</html>
+
