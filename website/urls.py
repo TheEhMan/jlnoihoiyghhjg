@@ -31,7 +31,7 @@ urlpatterns = [
     
 #################################### Stroke Page ###################################
 
-    path('stroke_home/', views.stroke_home, name = "stroke_home"),
+    path('stroke', views.stroke_home, name = "stroke_home"),
     path('stroke_login/', views.stroke_login, name = "stroke_login"),
     path('stroke_logout/', views.stroke_logout, name = "stroke_logout"),
     path('stroke_register/', views.stroke_register, name = "stroke_register"),
