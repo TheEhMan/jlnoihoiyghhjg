@@ -48,9 +48,9 @@ def teaching_page(request):
 
 #################################### Heart Page ###################################
 
-def heart_home(request):
+def heart(request):
     context = {}
-    return render(request , 'website/heart_attack/heart_home.html', context)
+    return render(request , 'website/heart_attack/heart.html', context)
 
 def heart_login(request):
 
@@ -91,7 +91,7 @@ def heart_form(request):
 
 def heart_logout(request):
     logout(request)
-    return redirect ('heart_home')
+    return redirect ('heart')
 
 
 def heart_result(request):
@@ -171,9 +171,9 @@ def heart_view_pdf(request):
 
 #################################### Stroke Page ###################################
 
-def stroke_home(request):
+def stroke(request):
     context = {}
-    return render(request , 'website/stroke/stroke_home.html', context)
+    return render(request , 'website/stroke/stroke.html', context)
 
 def stroke_register(request):
     form = CreateUserForm()
@@ -209,7 +209,7 @@ def stroke_login(request):
 
 def stroke_logout(request):
     logout(request)
-    return redirect ('stroke_home')
+    return redirect ('stroke')
 
 def stroke_form(request):
     context = {}   

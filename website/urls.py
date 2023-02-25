@@ -17,7 +17,7 @@ urlpatterns = [
 
 #################################### Heart Page ###################################
 
-    path('heart_home/', views.heart_home, name = "heart_home"),
+    path('heart/', views.heart, name = "heart"),
     path('heart_login/', views.heart_login, name = "heart_login"),
     path('heart_register/',views.heart_register, name="heart_register"),
     path('heart_logout/',views.heart_logout, name="heart_logout"),
@@ -31,7 +31,7 @@ urlpatterns = [
     
 #################################### Stroke Page ###################################
 
-    path('stroke', views.stroke_home, name = "stroke_home"),
+    path('stroke/', views.stroke, name = "stroke"),
     path('stroke_login/', views.stroke_login, name = "stroke_login"),
     path('stroke_logout/', views.stroke_logout, name = "stroke_logout"),
     path('stroke_register/', views.stroke_register, name = "stroke_register"),
