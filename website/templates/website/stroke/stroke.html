@@ -35,7 +35,7 @@
                 <ul class="navbar-nav me-auto">
 
                 </ul>
-
+                
                 
                 {% if user.is_authenticated %} 
          
@@ -45,19 +45,19 @@
   </span>
 
   <span>
-    <a class="btn btn-outline-info my-2 my-sm-0" href="{% url 'stroke_logout'%}" role="button">Logout</a>
+    <a class="btn btn-success my-2 my-sm-0" href="{% url 'stroke_logout'%}" role="button">Logout</a>
 
-    <a class="btn btn-outline-info my-2 my-sm-0" href="{% url 'stroke_form'%}" role="button">Upload</a>
+    <a class="btn btn-success my-2 my-sm-0" href="{% url 'stroke_form'%}" role="button">Upload</a>
 
 </span>
          
       {%else%}
       <form>
-        <a class="btn btn-outline-info my-2 my-sm-0" href="{% url 'stroke_login'%}" role="button">Login</a>
+        <a class="btn btn-success my-2 my-sm-0" href="{% url 'stroke_login'%}" role="button">Login</a>
 
-        <a class="btn btn-outline-info my-2 my-sm-0" href="{% url 'stroke_register'%}" role="button">Register</a>
+        <a class="btn btn-success my-2 my-sm-0" href="{% url 'stroke_register'%}" role="button">Register</a>
       
-     </form>
+    </form>
       {% endif %}
             </div>
         </div>
