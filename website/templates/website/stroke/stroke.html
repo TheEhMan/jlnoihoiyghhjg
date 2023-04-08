@@ -79,7 +79,7 @@
               <p class="text" style="text-align:left;margin-right:75px;margin-left:75px;">
                 The results from the study show that this Smart Health Recommender System can predict the stroke risk levels and subsequently procure meaningful insights on the stroke risk factors that can assist clinicians for better managing stroke risk based on the proposed framework.
               </p>
-            
+              <iframe src="{% static 'pdf/stroke/stroke.pdf' %}" width="75%" height="600px"></iframe>
             
             </div>
           </center>
@@ -105,12 +105,10 @@
           
                   <ul class="list-unstyled">
                     <li>
-                        <a href="{% url 'stroke'%}" class="text-white">Stroke Risk Recommender System</a>
-                        
+                        <a href="{% url 'stroke'%}" class="text-white">Stroke Risk Recommender System</a>                        
                     </li>
                     <li>
-                        <a href="#" class="text-white">Heart Disease Monitoring System</a>
-
+                      <a href="{% url 'heart'%}" class="text-white">Heart Disease Monitoring System</a>
                     </li>
                     <li>
                         <a href="{% url 'home'%}" class="text-white">Mamatjan Lab</a>
