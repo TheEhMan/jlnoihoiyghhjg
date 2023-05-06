@@ -14,6 +14,7 @@ urlpatterns = [
     path('publications/', views.publications_page, name = "publications"),
     path('teaching/', views.teaching_page, name = "teaching"),
     path('team-members/', views.teammembers_page, name = "team-members"),
+    path('IEEE-CIHM/', views.ieee_page, name = "ieee"),
 
 #################################### Heart Page ###################################
 
