@@ -290,3 +290,84 @@ def view_pdf(request):
     buf.seek(0)
 
     return FileResponse(buf, as_attachment=True , filename = 'Recommender_results.pdf')
+
+#################################### Diabetes Page ###################################
+#need to create the views for the diabetes pages
+"""
+def heart(request):
+    context = {}
+    return render(request , 'website/heart_attack/heart.html', context)
+
+def heart_login(request):
+
+    if request.method == "POST":
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username= username, password = password)
+
+        if user != None:
+            login(request, user)
+
+            return redirect('heart_form')
+        else:
+            messages.error(request,'Username or Password is incorrect ')
+
+    context = {}
+    return render(request , 'website/heart_attack/heart_login.html', {})
+
+def heart_register(request):
+    form = CreateUserForm()
+
+    if request.method== "POST":
+        form = CreateUserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            user = form.cleaned_data.get('username')
+            messages.success(request, "Account was created for "+user)
+            return redirect ('heart_login')
+
+    context = {'form':form}
+    return render(request , 'website/heart_attack/heart_register.html', context)
+    
+def heart_form(request):
+    context = {}   
+    return render(request, 'website/heart_attack/heart_form.html', context)
+
+
+def heart_logout(request):
+    logout(request)
+    return redirect ('heart')
+
+
+def heart_result(request):
+
+    return render(request, 'website/heart_attack/heart_result.html', my_context)
+
+
+def heart_view_pdf(request):
+
+    buf = io.BytesIO()
+
+    c= canvas.Canvas(buf,pagesize= letter , bottomup=0)
+
+    textob = c.beginText()
+    textob.setTextOrigin(inch,inch) 
+    textob.setFont("Helvetica",14)
+
+    
+    lines=[
+        
+    ]
+
+
+    for line in lines:
+        textob.textLine(line)
+
+    c.drawText(textob)
+    c.showPage()
+    c.save()
+    buf.seek(0)
+
+    return FileResponse(buf, as_attachment=True , filename = 'Recommender_results.pdf')
+    """
