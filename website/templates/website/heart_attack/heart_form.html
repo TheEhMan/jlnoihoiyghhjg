@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -151,8 +150,8 @@
               <label for="gender" class="col-5 col-form-label">Gender</label> 
               <div class="col-7">
                 <select id="gender" name="gender" required="required" class="custom-select">
-                  <option value="0">Male</option>
-                  <option value="1">Female</option>
+                  <option value="1">Male</option>
+                  <option value="0">Female</option>
                 </select>
               </div>
             </div>
@@ -163,16 +162,18 @@
               <br>2 - Non-Anginal Pain
               <br>3 - Asymptomatic">Chest Pain Type</label> 
               <div class="col-7">
-                <select id="cp" name="cp" aria-describedby="cpHelpBlock" required="required" class="custom-select">
+                <select id="cp" name="cp"  required="required" class="custom-select">
                   <option value="0">Typical Angina</option>
                   <option value="1">Atypical Angina</option>
                   <option value="2">Non-Anginal Pain</option>
                   <option value="3">Asymptomatic</option>
                 </select>
               </div>
+               
             </div>
             <div class="form-group row">
               <label for="trtbps" class="col-5 col-form-label" data-toggle="tooltip" title="normal < 140">Resting Blood Pressure</label> 
+             
               <div class="col-7">
                 <div class="input-group"> 
                   <input id="trtbps" name="trtbps" placeholder="Enter your Resting Blood Pressure" type="text" class="form-control" required="required">
@@ -194,9 +195,13 @@
               <label for="glucose" class="col-5 col-form-label" data-toggle="tooltip" data-html="true" title="  
               Blood Sugar when Fasting
                ">Fasting Blood Sugar</label> 
+               
               <div class="col-7">
-                <input id="fbs" name="fbs" placeholder="Enter your Fasting Blood Sugar" type="text" class="form-control" required="required">
-              </div>
+                <select id="fbs" name="fbs" aria-describedby="cpHelpBlock" required="required" class="custom-select">
+                  <option value="0">Higher than 120 mg/dl </option>
+                  <option value="1">Less than 120 mg/dl </option>
+               
+                </select>  </div>
             </div>
             <div class="form-group row">
               <label for="restecg" class="col-5 col-form-label" data-toggle="tooltip" data-html="true" title="  
@@ -223,11 +228,13 @@
                ">Excersise Induced Angina</label> 
               <div class="col-7">
                 <select id="exng" name="exng" required="required" class="custom-select">
-                  <option value="0">Yes</option>
-                  <option value="1">No</option>
+                  <option value="0">No</option>
+                  <option value="1">Yes</option>
                 </select>
               </div>
             </div>
+            
+            
             <div class="form-group row">
               <label for="oldpeak" class="col-5 col-form-label" data-toggle="tooltip" data-html="true" title="  
               If the depressions < 0.5mm, then its normal.
@@ -236,6 +243,8 @@
                 <input id="oldpeak" name="oldpeak" placeholder="Enter the Slope" type="text" class="form-control" required="required">
               </div>
             </div>
+
+
             <div class="form-group row">
               <label for="slope" class="col-5 col-form-label" data-toggle="tooltip" data-html="true" title="  
               the slope of the peak exercise ST segment
@@ -320,7 +329,7 @@
         <ul class="list-unstyled">
           <ul class="list-unstyled">
             <li>
-                <a href="{% url 'stroke'%}" class="text-white">Stroke Risk Recommender System</a>
+               
                 
             </li>
             <li>
@@ -361,4 +370,3 @@
   <!-- Copyright -->
 </footer>
 </html>
-

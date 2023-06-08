@@ -84,180 +84,177 @@ $(document).ready(function(){
       <center>
       {% if x == 0%}
       <h5>You are <u>NOT at risk</u> for heart attack</h5>
-      {% elif x == 1%}
-      <h5>You are at <u>LOW risk</u> for heart attack</h5>
-      {% elif x == 2%}
-      <h5>You are at <u> MODERATE risk</u> for heart attack</h5>
       {% else %}
-      <h5>You are at <u>HIGH risk</u> for heart attack</h5>
+      <h5>You are at <u>some risk</u> for heart attack</h5>
       {% endif%}
-   <p> <h6> Your most at risk factors for heart attack are {% for i in features %}{{ i }}, {% endfor %}.</h6>
-         <p> The details are given on the graph below: </p>
-      </p></center>
-      <div class='parent'>
-        <div class = 'child-yu'>
-            <div class="table-responsive">
-                <table class="table">
-                    <thead class="thead-light">
-                        <u><h5> Patient information</h5></u>
-                        <tr>
-                        <th scope="col">Risk Factors</th>
-                        <th scope="col">Value</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="col">Patient ID</th>
-                            <th scope="col">{{pid}}</th>
-                          </tr>
-                      <tr>
-                        <td><p data-toggle="tooltip" title="Patient's Age in Years"> Age</p></td>
-                        <td>{{age}}</td>
-                      </tr>
-                      <tr>
-                        <td><p data-toggle="tooltip" title="Patient's Gender 0=male , 1=female ">Gender<p></td>
-                        <td>{{gender}}</td>
-                      </tr>
-                      <tr>
-                        <td><p data-toggle="tooltip" data-placement="left" data-html="true" title="
-                          0 - Typical Angina 
-              <br>1 - Atypical Angina
-              <br>2 - Non-Anginal Pain
-              <br>3 - Asymptomatic"> Chest Pain Type
-                          </p></td>
-                        <td>{{cp}}</td>
-                      </tr>
-                      <tr>
-                        <td><p data-toggle="tooltip" title="normal < 140">Resting Blood Pressure</p></td>
-                        <td>{{trtbps}}</td>
-                      </tr>
-                      <tr>
-                        <td><p data-toggle="tooltip" data-html="true" title="
-                          <br> Total Cholesterol normal less than 170mg/dL
-                          <br>Non-HDL cholesterol Less than 120mg/dL
-                          <br>LDL cholesterol Less than 100mg/dL
-                          <br> HDL cholesterol More than 45mg/dL
-                          <br> ">
-                          Cholesterol
-                          </p></td>
-                        <td>{{cholesterol}}</td>
-                      </tr>
-                      <tr>
-                        <td><p data-toggle="tooltip" data-placement="left" data-html="true" title="Blood Sugar when Fasting">
-                            Fasting Blood Sugar
-                          </p></td>
-                        <td>{{glucose}}</td>
-                      </tr>
-                      <tr>
-                        <td><p data-toggle="tooltip" title="normal=60 to 100 beats/minute">ECG at Rest</td>
-                        <td>{{restecg}}</td>
-                      </tr>
-                      <tr>
-                        <td><p data-toggle="tooltip" data-html="true" title="Maximum Heart Rate Achieved">
-                          Maximum Heart Rate Achieved
-                          </p></td>
-                        <td>{{thalachh}}</td>
-                      </tr>
-                      <tr>
-                        <td>  <p data-toggle="tooltip" title="This happens at the beginning of the exercise of people with ischemic heart disease.">Excersise Induced Angina</p></td>
-                        <td>{{exng}}</td>
-                      </tr>
-                      <tr>
-                        <td>  <p data-toggle="tooltip" title="If the depressions < 0.5mm, then its normal.">ST Depression </p></td>
-                        <td>{{oldpeak}}</td>
-                      </tr>
-                      <tr>
-                        <td>  <p data-toggle="tooltip" title="the slope of the peak exercise ST segment">Slope of the Peak Exercise</p></td>
-                        <td>{{slope}}</td>
-                      </tr>
-                      <tr>
-                        <td>  <p data-toggle="tooltip" title="number of major vessels (0-3) colored by flourosopy">Number of Major Vessels</p></td>
-                        <td>{{caa}}</td>
-                      </tr>
-                      <tr>
-                        <td>  <p data-toggle="tooltip" title="thal: 0 = normal; 1 = fixed defect; 2 = reversable defect">Thalium Stress Test Result</p></td>
-                        <td>{{thall}}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-        </div>
-    </div>
-       <div class='child-u'>
-        {% if chart %}
-        <img src = "data:image/png; base64 , {{chart|safe}}">
-        {%endif %}
+      <p> <h6> Your most at risk factors for heart attack are {% for i in features %}{{ i }}, {% endfor %}.</h6>
+        <p> The details are given on the graph below: </p>
+     </p></center>
+     <div class='parent'>
+       <div class = 'child-yu'>
+           <div class="table-responsive">
+               <table class="table">
+                   <thead class="thead-light">
+                       <u><h5> Patient information</h5></u>
+                       <tr>
+                       <th scope="col">Risk Factors</th>
+                       <th scope="col">Value</th>
+                     </tr>
+                   </thead>
+                   <tbody>
+                       <tr>
+                           <th scope="col">Patient ID</th>
+                           <th scope="col">{{pid}}</th>
+                         </tr>
+                     <tr>
+                       <td><p data-toggle="tooltip" title="Patient's Age in Years"> Age</p></td>
+                       <td>{{age}}</td>
+                     </tr>
+                     <tr>
+                       <td><p data-toggle="tooltip" title="Patient's Gender 0=male , 1=female ">Gender<p></td>
+                       <td>
+                        {% if gender == 0%}
+                        Female
+                        {% else %}
+                        Male
+                        {% endif%}
+                       </td>
+                     </tr>
+                     <tr>
+                       <td><p data-toggle="tooltip" data-placement="left" data-html="true" title="
+                         0 - Typical Angina
+             <br>1 - Atypical Angina
+             <br>2 - Non-Anginal Pain
+             <br>3 - Asymptomatic"> Chest Pain Type
+                         </p></td>
+                       <td>{{cp}}</td>
+                     </tr>
+                     <tr>
+                       <td><p data-toggle="tooltip" title="normal < 140">Resting Blood Pressure</p></td>
+                       <td>{{trtbps}}</td>
+                     </tr>
+                     <tr>
+                       <td><p data-toggle="tooltip" data-html="true" title="
+                         <br> Total Cholesterol normal less than 170mg/dL
+                         <br>Non-HDL cholesterol Less than 120mg/dL
+                         <br>LDL cholesterol Less than 100mg/dL
+                         <br> HDL cholesterol More than 45mg/dL
+                         <br> ">
+                         Cholesterol
+                         </p></td>
+                       <td>{{chol}}</td>
+                     </tr>
+                     <tr>
+                       <td><p data-toggle="tooltip" data-placement="left" data-html="true" title="Blood Sugar when Fasting">
+                           Fasting Blood Sugar
+                         </p></td>
+                       <td>{{fbs}}</td>
+                     </tr>
+                     <tr>
+                       <td><p data-toggle="tooltip" title="normal=60 to 100 beats/minute">ECG at Rest</td>
+                       <td>{{restecg}}</td>
+                     </tr>
+                     <tr>
+                       <td><p data-toggle="tooltip" data-html="true" title="Maximum Heart Rate Achieved">
+                         Maximum Heart Rate Achieved
+                         </p></td>
+                       <td>{{thalachh}}</td>
+                     </tr>
+                     <tr>
+                       <td>  <p data-toggle="tooltip" title="This happens at the beginning of the exercise of people with ischemic heart disease.">Excersise Induced Angina</p></td>
+                       <td>{{exng}}</td>
+                     </tr>
+                     <tr>
+                       <td>  <p data-toggle="tooltip" title="If the depressions < 0.5mm, then its normal.">ST Depression </p></td>
+                       <td>{{oldpeak}}</td>
+                     </tr>
+                     <tr>
+                       <td>  <p data-toggle="tooltip" title="the slope of the peak exercise ST segment">Slope of the Peak Exercise</p></td>
+                       <td>{{slope}}</td>
+                     </tr>
+                     <tr>
+                       <td>  <p data-toggle="tooltip" title="number of major vessels (0-3) colored by flourosopy">Number of Major Vessels</p></td>
+                       <td>{{caa}}</td>
+                     </tr>
+                     <tr>
+                       <td>  <p data-toggle="tooltip" title="thal: 0 = normal; 1 = fixed defect; 2 = reversable defect">Thalium Stress Test Result</p></td>
+                       <td>{{thall}}</td>
+                     </tr>
+                   </tbody>
+                 </table>
        </div>
-       <u><h4> Group Explanation </h4></u>
-       {% load static %}
-       <div class='parent'>
-       <div class='child'> <h5>Group 0</h5><img src="{% static 'assets/img/portfolio/stroke/Figure_0.png' %}" alt="My image" style="max-width:400px;"> </div>
-       <div class='child'> <h5>Group 1</h5><img src="{% static 'assets/img/portfolio/stroke/Figure_1.png' %}" alt="My image" style="max-width:400px;"> </div>
-       <div class='child'> <h5>Group 2</h5><img src="{% static 'assets/img/portfolio/stroke/Figure_2.png' %}" alt="My image" style="max-width:400px;"> </div>
-       <div class='child'> <h5>Group 3</h5><img src="{% static 'assets/img/portfolio/stroke/Figure_3.png' %}" alt="My image" style="max-width:400px;"> </div>
-       </div >
-  </div>
-        <script>
-            var button = document.getElementById("pdfbutton");
-            var makepdf = document.getElementById("makepdf");
-            button.addEventListener("click", function () {
-                html2pdf().from(makepdf).save();
-            });
-        </script>
+   </div>
+      <div class='child-u'>
+       {% if chart %}
+       <img src = "data:image/png; base64 , {{chart|safe}}">
+       {%endif %}
       </div>
-    </div>
-  </div>
+      <!--
+      <u><h4> Group Explanation </h4></u>
+      {% load static %}
+      <div class='parent'>
+      <div class='child'> <h5>Group 0</h5><img src="{% static 'assets/img/portfolio/stroke/Figure_0.png' %}" alt="My image" style="max-width:400px;"> </div>
+      <div class='child'> <h5>Group 1</h5><img src="{% static 'assets/img/portfolio/stroke/Figure_1.png' %}" alt="My image" style="max-width:400px;"> </div>
+      <div class='child'> <h5>Group 2</h5><img src="{% static 'assets/img/portfolio/stroke/Figure_2.png' %}" alt="My image" style="max-width:400px;"> </div>
+      <div class='child'> <h5>Group 3</h5><img src="{% static 'assets/img/portfolio/stroke/Figure_3.png' %}" alt="My image" style="max-width:400px;"> </div>
+      </div >-->
+ </div>
+       <script>
+           var button = document.getElementById("pdfbutton");
+           var makepdf = document.getElementById("makepdf");
+           button.addEventListener("click", function () {
+               html2pdf().from(makepdf).save();
+           });
+       </script>
+     </div>
+   </div>
+ </div>
 </div>
 </body>
 <footer class="text-white text-center text-lg-start" style="background-color:#2b99fc; color:white;">
-  <!-- Grid container -->
-  <div class="container p-4">
-    <!--Grid row-->
-    <div class="row">
-      <!--Grid column-->
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-        <h5 class="text-uppercase mb-0" style="color:white;">More From Us</h5>
-
-        <ul class="list-unstyled">
-          <ul class="list-unstyled">
-            <li>
-                <a href="{% url 'stroke'%}" class="text-white">Stroke Risk Recommender System</a>
-                
-            </li>
-            <li>
-                <a href="{% url 'heart'%}" class="text-white">Heart Disease Monitoring System</a>
-                
-            </li>
-            <li>
-                <a href="{% url 'home'%}" class="text-white">Mamatjan Lab</a>
-            </li>
-          </ul>
-        </ul>
-      </div>
-      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-        <h5 class="text-uppercase mb-0" style="color:white;">Find Us</h5>
-
-        <ul class="list-unstyled">
-          <li>
-            <a href="https://ca.linkedin.com/in/yasin-mamatjan-22599364" class="text-white">Linkedin</a>
-          </li>
-          <li>
-            <a href="https://www.researchgate.net/profile/Yasin-Mamatjan" class="text-white">Research Gate</a>
-          </li>
-          <li>
-            <a href="https://scholar.google.ca/citations?user=-8wYvDIAAAAJ&hl=en" class="text-white">Google Scholar</a>
-          </li>
-        </ul>
-      </div>
-      <!--Grid column-->
-    </div>
-    <!--Grid row-->
-  </div>
-  <!-- Grid container -->
-
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); color:white;">
-    ©2023 Copyright: Mamatjan Lab
-  </div>
-  <!-- Copyright -->
+ <!-- Grid container -->
+ <div class="container p-4">
+   <!--Grid row-->
+   <div class="row">
+     <!--Grid column-->
+     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+       <h5 class="text-uppercase mb-0" style="color:white;">More From Us</h5>
+       <ul class="list-unstyled">
+         <ul class="list-unstyled">
+           <li>
+           </li>
+           <li>
+               <a href="{% url 'heart'%}" class="text-white">Heart Disease Monitoring System</a>
+           </li>
+           <li>
+               <a href="{% url 'home'%}" class="text-white">Mamatjan Lab</a>
+           </li>
+         </ul>
+       </ul>
+     </div>
+     <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+       <h5 class="text-uppercase mb-0" style="color:white;">Find Us</h5>
+       <ul class="list-unstyled">
+         <li>
+           <a href="https://ca.linkedin.com/in/yasin-mamatjan-22599364" class="text-white">Linkedin</a>
+         </li>
+         <li>
+           <a href="https://www.researchgate.net/profile/Yasin-Mamatjan" class="text-white">Research Gate</a>
+         </li>
+         <li>
+           <a href="https://scholar.google.ca/citations?user=-8wYvDIAAAAJ&hl=en" class="text-white">Google Scholar</a>
+         </li>
+       </ul>
+     </div>
+     <!--Grid column-->
+   </div>
+   <!--Grid row-->
+ </div>
+ <!-- Grid container -->
+ <!-- Copyright -->
+ <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2); color:white;">
+   ©2023 Copyright: Mamatjan Lab
+ </div>
+ <!-- Copyright -->
 </footer>
 </html>
