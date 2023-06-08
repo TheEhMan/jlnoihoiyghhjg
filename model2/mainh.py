@@ -19,11 +19,11 @@ shap==0.39.0
 
 #Load risk level classifier: CatBoost
 #catboost_model = pickle.load(open("C:\\Users\\ASUS\\Downloads\\MamatjanLabFinal-main\\MamatjanLabFinal-main\\model\\model_pkl",'rb'))
-catboost_model = pickle.load(open("model2\\model_heart_pkl",'rb'))
+catboost_model = pickle.load(open("model2/model_heart_pkl",'rb'))
 
 #Load first feature selection model: SHAP
 #explainer = joblib.load("C:\\Users\\ASUS\\Downloads\\MamatjanLabFinal-main\\MamatjanLabFinal-main\\model\\explainer.bz2")
-explainer = joblib.load(open('model2\\explainer_heart.bz2', 'rb'))
+explainer = joblib.load(open('model2/explainer_heart.bz2', 'rb'))
  
 def get_shap_explanation_scores_df_heart(patient):
 
