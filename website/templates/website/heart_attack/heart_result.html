@@ -111,7 +111,7 @@ $(document).ready(function(){
                        <td>{{age}}</td>
                      </tr>
                      <tr>
-                       <td><p data-toggle="tooltip" title="Patient's Gender 0=male , 1=female ">Gender<p></td>
+                       <td><p>Gender<p></td>
                        <td>
                         {% if gender == 0%}
                         Female
@@ -127,7 +127,15 @@ $(document).ready(function(){
              <br>2 - Non-Anginal Pain
              <br>3 - Asymptomatic"> Chest Pain Type
                          </p></td>
-                       <td>{{cp}}</td>
+                       <td>{% if cp == 0 %}
+                        Typical Angina
+                        {% elif cp == 1 %}
+                        Atypical Angina
+                        {% elif cp == 2 %}
+                        Non-Anginal Pain
+                        {% elif cp == 3 %}
+                        Asymptomatic
+                        {% endif%}</td>
                      </tr>
                      <tr>
                        <td><p data-toggle="tooltip" title="normal < 140">Resting Blood Pressure</p></td>
@@ -178,7 +186,13 @@ $(document).ready(function(){
                      </tr>
                      <tr>
                        <td>  <p data-toggle="tooltip" title="thal: 0 = normal; 1 = fixed defect; 2 = reversable defect">Thalium Stress Test Result</p></td>
-                       <td>{{thall}}</td>
+                       <td>{% if thall == 0 %}
+                        Normal
+                        {% elif thall == 1 %}
+                        Fixed Defect
+                        {% elif cp == 2 %}
+                        Reversible Defect
+                        {% endif%}</td>
                      </tr>
                    </tbody>
                  </table>

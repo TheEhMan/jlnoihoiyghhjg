@@ -116,18 +116,37 @@ $(document).ready(function(){
                       </tr>
                       <tr>
                         <td><p data-toggle="tooltip" title="Patient's Gender 0=male , 1=female ">Gender<p></td>
-                        <td>{{gender}}</td>
+                        <td>{% if gender == 0%}
+                          Male
+                          {% else %}
+                          Female
+                          {% endif%}</td>
                       </tr>
                       <tr>
                         <td><p data-toggle="tooltip" data-placement="left" data-html="true" title="
-                          <br>0 -  No symptoms at all
-                          <br>1 -  No significant disability despite symptoms; able to carry out all usual duties and activities
+                          <br>0 - No symptoms at all
+                          <br>1 - No significant disability despite symptoms; able to carry out all usual duties and activities
+                          <br>2 - The patient has slight disability; unable to carry out all pre-stroke activities but able to look after self without daily help.
                           <br>3 - Moderate disability; requiring some help, but able to walk without assistance
                           <br>4 - Moderately severe disability; unable to walk without assistance and unable to attend to own bodily needs without assistance
                           <br>5 - Severe disability; bedridden, incontinent and requiring constant nursing care and attention
-                          <br>6 Dead"> mRS
+                          <br>6 - Dead"> mRS
                           </p></td>
-                        <td>{{mrs}}</td>
+                        <td>{% if mrs == 0 %}
+                        No symptoms at all
+                        {% elif mrs == 1 %}
+                        No significant disability
+                        {% elif mrs == 2 %}
+                        The patient has slight disability
+                        {% elif mrs == 3 %}
+                        Moderate disability
+                        {% elif mrs == 4 %}
+                        Moderately severe disability
+                        {% elif mrs == 5 %}
+                        Severe disability
+                        {% elif mrs == 6 %}
+                        Dead
+                        {% endif%}</td>
                       </tr>
                       <tr>
                         <td><p data-toggle="tooltip" title="normal < 140">Systolic BP</p></td>
@@ -150,7 +169,11 @@ $(document).ready(function(){
                       </tr>
                       <tr>
                         <td><p data-toggle="tooltip" title="0= not smoking , 1 = smokes">Smoking</td>
-                        <td>{{smoking}}</td>
+                        <td>{% if smoking == 0%}
+                          Not Smoking
+                          {% else %}
+                          Smoking
+                          {% endif%}</td>
                       </tr>
                       <tr>
                         <td><p data-toggle="tooltip" data-html="true" title="
