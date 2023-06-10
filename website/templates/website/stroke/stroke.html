@@ -45,17 +45,24 @@
   </span>
 
   <span>
-    <a class="btn btn-success my-2 my-sm-0" href="{% url 'stroke_logout'%}" role="button">Logout</a>
+    
+    <a href="{% url 'stroke_form'%}" class="btn btn-outline-secondary my-2 my-sm-0" role="button" style="color:black;">Upload Data</a>
 
-    <a class="btn btn-success my-2 my-sm-0" href="{% url 'stroke_form'%}" role="button">Upload</a>
-
+    <a href="{% url 'stroke_logout'%}" class="btn btn-outline-secondary my-2 my-sm-0" role="button" style="color:black;">LOG OUT</a>
+    
 </span>
          
       {%else%}
       <form>
-        <a class="btn btn-success my-2 my-sm-0" href="{% url 'stroke_login'%}" role="button">Login</a>
+<style>
+    .btn{
+        color:black;
+    }
+</style>
 
-        <a class="btn btn-success my-2 my-sm-0" href="{% url 'stroke_register'%}" role="button">Register</a>
+        <a href="{% url 'stroke_login'%}" class="btn btn-outline-secondary my-2 my-sm-0" role="button" style="color:black;">LOG IN</a>
+        <a href="{% url 'stroke_register'%}" class="btn btn-outline-secondary my-2 my-sm-0" role="button" style="color:black;">SIGN UP</a>
+
       
     </form>
       {% endif %}
