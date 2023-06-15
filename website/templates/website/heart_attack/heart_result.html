@@ -85,7 +85,7 @@ $(document).ready(function(){
       {% if x == 0%}
       <h5>You are <u>NOT at risk</u> for heart attack</h5>
       {% else %}
-      <h5>You are at <u>some risk</u> for heart attack</h5>
+      <h5>You are at <u>risk</u> for heart attack</h5>
       {% endif%}
       <p> <h6> Your most at risk factors for heart attack are {% for i in features %}{{ i }}, {% endfor %}.</h6>
         <p> The details are given on the graph below: </p>
@@ -127,15 +127,7 @@ $(document).ready(function(){
              <br>2 - Non-Anginal Pain
              <br>3 - Asymptomatic"> Chest Pain Type
                          </p></td>
-                       <td>{% if cp == 0 %}
-                        Typical Angina
-                        {% elif cp == 1 %}
-                        Atypical Angina
-                        {% elif cp == 2 %}
-                        Non-Anginal Pain
-                        {% elif cp == 3 %}
-                        Asymptomatic
-                        {% endif%}</td>
+                       <td>{{cp}}</td>
                      </tr>
                      <tr>
                        <td><p data-toggle="tooltip" title="normal < 140">Resting Blood Pressure</p></td>
@@ -186,13 +178,8 @@ $(document).ready(function(){
                      </tr>
                      <tr>
                        <td>  <p data-toggle="tooltip" title="thal: 0 = normal; 1 = fixed defect; 2 = reversable defect">Thalium Stress Test Result</p></td>
-                       <td>{% if thall == 0 %}
-                        Normal
-                        {% elif thall == 1 %}
-                        Fixed Defect
-                        {% elif thall == 2 %}
-                        Reversible Defect
-                        {% endif%}</td>
+                       <td>  {{thall}}</td>
+                      
                      </tr>
                    </tbody>
                  </table>

@@ -19,11 +19,11 @@ shap==0.39.0
 
 #Load risk level classifier: CatBoost
 #catboost_model = pickle.load(open("C:\\Users\\ASUS\\Downloads\\MamatjanLabFinal-main\\MamatjanLabFinal-main\\model\\model_pkl",'rb'))
-catboost_model = pickle.load(open("model2/model_heart_pkl",'rb'))
+catboost_model_h = pickle.load(open("model2/model_cat_heart_pkl",'rb'))
 
 #Load first feature selection model: SHAP
 #explainer = joblib.load("C:\\Users\\ASUS\\Downloads\\MamatjanLabFinal-main\\MamatjanLabFinal-main\\model\\explainer.bz2")
-explainer = joblib.load(open('model2/explainer_heart.bz2', 'rb'))
+explainer = joblib.load(open('model2/explainer_cat_heart.bz2', 'rb'))
  
 def get_shap_explanation_scores_df_heart(patient):
 
@@ -66,7 +66,7 @@ def plot_SHAP_result_heart(patient_data):
     plt.figure(figsize=(8,7))
      
 
-    colors = {"age":'r', "sex":'c', "cp":'y', "trtbps":'b', "chol":'k', "fbs":'grey', "restecg": 'w',"thalachh":'lightcoral', "exng":'maroon', "oldpeak":'coral', "slp":'orange', "caa":'skyblue', "thall": 'crimson'}
+    colors = {"age":'r', "sex":'c', "cp":'y', "trtbps":'b', "chol":'k', "fbs":'grey', "restecg": 'gold',"thalachh":'lightcoral', "exng":'maroon', "oldpeak":'coral', "slp":'orange', "caa":'skyblue', "thall": 'crimson'}
     df = get_shap_explanation_scores_df_heart(patient_data)
     
     """plt.bar(Featurelis, valuelis,  color=[colors[i] for i in Featurelis])
@@ -85,7 +85,7 @@ def get_risk_level_heart(patient_data):
     Output: risk level from 0-1
     """
 
-    prediction = catboost_model.predict(patient_data)
+    prediction = catboost_model_h.predict(patient_data)
     label = np.argmax(prediction, axis=0)
 
     return(label)

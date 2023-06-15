@@ -16,7 +16,7 @@ from reportlab.lib.units import inch
 from reportlab.lib.pagesizes import letter
 
 from model.main import *
-from model2.mainh import get_shap_explanation_scores_df_heart, get_risk_level_heart, plot_SHAP_result_heart
+from model2.mainh import *
 
 def home_page(request):
     context = {}
@@ -125,7 +125,11 @@ def heart_result(request):
         arr = np.array(inplis)
 
         sdf_train= get_shap_explanation_scores_df_heart(arr)
-        x = get_risk_level_heart(arr) 
+        #x = get_risk_level_heart(arr) 
+        x= catboost_model_h.predict(arr)
+        print (x)
+        print (inplis) 
+ 
         chart= plot_SHAP_result_heart(inplis)
 
         Featurelis=[(str(sdf_train['Feature'][0])),(str(sdf_train['Feature'][1])),(str(sdf_train['Feature'][2])) , (str(sdf_train['Feature'][3])), (str(sdf_train['Feature'][4]))]
