@@ -31,13 +31,13 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="mynavbar">
+            div class="collapse navbar-collapse" id="mynavbar">
                 <ul class="navbar-nav me-auto">
 
                 </ul>
                 
                 
-                {% if user.is_authenticated %} 
+                <!--<{% if user.is_authenticated %} 
          
        <span style="margin-right:15px;padding-top:10px;">
 		
@@ -47,25 +47,18 @@
   <span>
     
     <a href="{% url 'stroke_form'%}" class="btn btn-outline-secondary my-2 my-sm-0" role="button" style="color:black;">Upload Data</a>
-
     <a href="{% url 'stroke_logout'%}" class="btn btn-outline-secondary my-2 my-sm-0" role="button" style="color:black;">LOG OUT</a>
     
 </span>
          
       {%else%}
       <form>
-<style>
-    .btn{
-        color:black;
-    }
-</style>
 
         <a href="{% url 'stroke_login'%}" class="btn btn-outline-secondary my-2 my-sm-0" role="button" style="color:black;">LOG IN</a>
         <a href="{% url 'stroke_register'%}" class="btn btn-outline-secondary my-2 my-sm-0" role="button" style="color:black;">SIGN UP</a>
 
-      
     </form>
-      {% endif %}
+      {% endif %}-->
             </div>
         </div>
     </nav>

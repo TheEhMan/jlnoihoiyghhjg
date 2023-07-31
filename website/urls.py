@@ -38,7 +38,7 @@ urlpatterns = [
     path('stroke_register/', views.stroke_register, name = "stroke_register"),
     path('stroke_form/', views.stroke_form, name = "stroke_form"),
     path('stroke_result/', views.stroke_result, name = "stroke_result"),
-
+    path('watchlog/', views.watchlog, name = "watchlog"),
 
     ]
 

@@ -301,6 +301,10 @@ def view_pdf(request):
 
     return FileResponse(buf, as_attachment=True , filename = 'Recommender_results.pdf')
 
+def watchlog(request):
+    context = {}   
+    return render(request, 'website/stroke/watchlog.html', context)
+
 #################################### Diabetes Page ###################################
 #need to create the views for the diabetes pages
 """
