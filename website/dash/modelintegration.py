@@ -10,10 +10,10 @@ from django_plotly_dash import DjangoDash
 
 
 
-catboost_model = pickle.load(open("website\dash\model_pkl", 'rb'))
-explainer = joblib.load('website\dash\explainer.bz2')
+catboost_model = pickle.load(open("website/dash/model_pkl", 'rb'))
+explainer = joblib.load('website/dash/explainer.bz2')
 def get_shap_explanation_scores_df(patient):
-
+ 
     """
     Input: numpy array of patient input data
     Output: dataframe of the 10 features with their respective importance score calculated by SHAP (sorted)
