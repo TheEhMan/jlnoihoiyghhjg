@@ -18,6 +18,10 @@ from reportlab.lib.pagesizes import letter
 from model.main import *
 from model2.mainh import *
 
+def diabetes(request):
+    context = {}
+    return render(request, 'website/diabetes.html', context)
+
 def home_page(request):
     context = {}
     return render(request,'website/index.html',context)

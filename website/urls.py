@@ -6,6 +6,8 @@ from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
 
+from .dash import modelintegration
+
 urlpatterns = [
     path('', views.home_page, name = "home"),
     path('funding/', views.about_page, name = "about"),
@@ -39,6 +41,10 @@ urlpatterns = [
     path('stroke_form/', views.stroke_form, name = "stroke_form"),
     path('stroke_result/', views.stroke_result, name = "stroke_result"),
     path('watchlog/', views.watchlog, name = "watchlog"),
+
+    #################################### Diabetes page ###################################
+
+    path('diabetes/', views.diabetes, name= "diabetes"),
 
     ]
 
