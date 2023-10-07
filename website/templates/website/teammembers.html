@@ -49,11 +49,12 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'about' %}">Funding</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'projects' %}">Research</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'publications' %}">Publications</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'teaching' %}">Teaching</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'team-members' %}">Team</a></li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'collaborators' %}">Collaborators</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'projects' %}">Research</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'publications' %}">Papers</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'teaching' %}">Teaching</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'team-members' %}">Team</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'collaborators' %}">Collab</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'ieee' %}">IEEE-CIHM</a></li>
                 </ul>
             </div>
         </div>
@@ -146,6 +147,14 @@
                             <div class="portfolio-item-caption-content text-center text-white"></div>
                         </div>
                         <img class="img img-fluid rounded" src="{% static 'assets/img/portfolio/abubakar.jpg' %}" alt="..." />
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-5 item-7 img " style="width:200px;">
+                    <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal11">
+                        <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                            <div class="portfolio-item-caption-content text-center text-white"></div>
+                        </div>
+                        <img class="img img-fluid rounded" src="{% static 'assets/img/portfolio/mariyam.jpg' %}" alt="..." />
                     </div>
                 </div>
             </div>
@@ -441,6 +450,47 @@
                                 <!-- Portfolio Modal - Title-->
                                 <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">
                                     Abubakar Abdullahi
+                                </h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-infinity"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img class="img-fluid rounded resize" src="{% static 'assets/img/portfolio/abubakar.jpg' %}" alt="..." />
+                                <!-- Portfolio Modal - Text-->
+                                <ul style="padding-top:19px; text-align:left;">
+                                    <li>
+                                        She has BSc in Biology
+                                    </li>
+                                    <li>
+                                        Proficient in a variety of laboratory techniques, including aseptic techniques, PCR, gel
+                                        electrophoresis, cell culture, DNA extraction and purification, cell transformation, protein
+                                        production, microscopy, DNA sequencing, genome assembly, and data analysis.
+                                    </li>
+                                    <li>
+                                        Experienced in programming languages such as R and Python.
+                                    </li>
+                                </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Portofolio Modal 11-->
+    <div class="portfolio-modal modal fade" id="portfolioModal11" tabindex="-1" aria-labelledby="portfolioModal11" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">
+                                    Mariyam Argymby
                                 </h2>
                                 <!-- Icon Divider-->
                                 <div class="divider-custom">

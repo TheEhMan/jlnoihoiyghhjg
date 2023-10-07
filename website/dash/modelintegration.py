@@ -213,7 +213,7 @@ app.layout = dbc.Container([
             dbc.Col([
                 dbc.Row([
                 html.Label("Partial Paresis", className = 'text-center', id = 'pp-label', style= {"cursor": "pointer"}),
-                dbc.Tooltip("the weakening of a muscle or group of muscles", target="pp-label", placement="top"),
+                dbc.Tooltip("Weakening of a muscle or group of muscles", target="pp-label", placement="top"),
                 dbc.RadioItems(
                     options = [{'label': "Yes", 'value': 1},{'label': 'No', 'value': 0}],
                     inline= True,
@@ -265,7 +265,7 @@ app.layout = dbc.Container([
         ]),
 
         dbc.Row([
-            dbc.Label('hello',
+            dbc.Label('This is where your diabetes risk will be displayed.',
                       id = 'output_label',
                       className = 'text-center',
                       ),
@@ -322,9 +322,9 @@ def update_label(n, age,sex, polyuria, polydopsia, swl, weakness, polyphagia, ge
         prediction  = catboost_model.predict(patient_input)
         fx = get_shap_explanation_scores_df(patient_input)
         if prediction == 0:
-            text = "You don't have diabetes risk"
+            text = "You don't have diabetes risk."
         else:
-            text = "You have diabetes risk"
+            text = "You have diabetes risk."
         figure = px.histogram(fx, x= 'Feature', y = 'shap_values', title= 'SHAP Explanation ')
 
         return text, figure

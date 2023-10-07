@@ -47,10 +47,12 @@
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'about' %}">Funding</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'projects' %}">Research</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'publications' %}">Publications</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'publications' %}">Papers</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'teaching' %}">Teaching</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'team-members' %}">Team</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'collaborators' %}">Collaborators</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'collaborators' %}">Collab</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="{% url 'ieee' %}">IEEE-CIHM</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -141,6 +143,15 @@
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
                             <img class="img-fluid" src="{% static 'assets/img/portfolio/heart.jpg' %}" alt="..." />
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 4-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="{% static 'assets/img/portfolio/diabetes.jpg' %}" alt="..." />
                         </div>
                     </div>
 
@@ -330,6 +341,41 @@
                                     The smart heart monitoring system guides both doctors and patients on the patient's risk of having a heart attack just by downloading an installation by wearing a smartwatch. The recommended smartwatches are the Apple Watch or the Samsung Smart Watch. There is also a website in which the doctor and the patient can view a chart and a graph displaying the main factors that could cause a heart attack and which ones to be more careful about. The patient can also download the results from the website as a pdf.
                                 </p>
                                 <a href="{% url 'heart' %}" class="btn btn-primary" role="button" aria-disabled="true">Visit Site</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio Modal 4-->
+    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="1" aria-labelledby="portfolioModal4" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <!-- Portfolio Modal - Title-->
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">
+                                    Diabetes Risk Detetcting System
+                                </h2>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">
+                                    <div class="divider-custom-line"></div>
+                                    <div class="divider-custom-icon"><i class="fas fa-infinity"></i></div>
+                                    <div class="divider-custom-line"></div>
+                                </div>
+                                <!-- Portfolio Modal - Image-->
+                                <img class="img-fluid rounded resize" src="{% static 'assets/img/portfolio/diabetes.jpg' %}" alt="..." />
+                                <!-- Portfolio Modal - Text-->
+                                <br>
+
+                                <p class="mb-4">
+                                    The smart heart monitoring system guides both doctors and patients on the patient's risk of having a heart attack just by downloading an installation by wearing a smartwatch. The recommended smartwatches are the Apple Watch or the Samsung Smart Watch. There is also a website in which the doctor and the patient can view a chart and a graph displaying the main factors that could cause a heart attack and which ones to be more careful about. The patient can also download the results from the website as a pdf.
+                                </p>
+                                <a href="{% url 'diabetes' %}" class="btn btn-primary" role="button" aria-disabled="true">Visit Site</a>
                             </div>
                         </div>
                     </div>
