@@ -17,6 +17,7 @@ urlpatterns = [
     path('teaching/', views.teaching_page, name = "teaching"),
     path('team-members/', views.teammembers_page, name = "team-members"),
     path('IEEE-CIHM/', views.ieee_page, name = "ieee"),
+    path('ACIHM-session-2024/', views.conference, name = "conference"),
 
 #################################### Heart Page ###################################
 

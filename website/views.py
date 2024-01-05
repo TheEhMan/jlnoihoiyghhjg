@@ -53,6 +53,10 @@ def teaching_page(request):
 def ieee_page(request):
     context = {}
     return render(request,'website/ieee.html',context)
+
+def conference(request):
+    context = {}
+    return render(request,'website/conference.html',context)
 #################################### Heart Page ###################################
 
 def heart(request):
