@@ -313,6 +313,10 @@ def watchlog(request):
     context = {}   
     return render(request, 'website/stroke/watchlog.html', context)
 
+def test(request):
+    context = {}   
+    return render(request, 'website/test.html', context)
+
 #################################### Diabetes Page ###################################
 #need to create the views for the diabetes pages
 """

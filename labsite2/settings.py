@@ -4,7 +4,7 @@ import dj_database_url
 from pathlib import Path
 
 env = environ.Env(
-    DEBUG=(bool, False),
+    DEBUG=(bool, True),
     DATABASE_URL=(str, ''),
 )
 

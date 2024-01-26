@@ -28,6 +28,9 @@ urlpatterns = [
     path('heart_form/', views.heart_form, name = "heart_form"),
     path('heart_result/',views.heart_result, name="heart_result"),
 
+    path('test/', views.test, name= "test"),
+
+
     path('reset_password/', auth_views.PasswordResetView.as_view() , name="reset_password"),
     path('reset_password_sent/',auth_views.PasswordResetDoneView.as_view() , name="reset_password_sent"),
     path('reset/<uidb64>/<token>', auth_views.PasswordResetConfirmView.as_view, name="reset/<uidb64>/<token>"),
