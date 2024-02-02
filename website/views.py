@@ -106,7 +106,6 @@ def heart_logout(request):
 
 
 def heart_result(request):
-
     if request.method == "POST":
         pid= request.POST.get('PID')
         age= str(request.POST.get('age'))
